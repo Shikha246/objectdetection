@@ -1,10 +1,10 @@
 
 img = "";
 objects = [];
-status = "";
+status1 = "";
 
 function preload(){
-  img = loadImage('dog_cat.jpg');
+  img = loadImage('oven.png');
 }
 
 
@@ -17,7 +17,7 @@ function setup() {
 
 function modelLoaded() {
   console.log("Model Loaded!")
-  status = true;
+  status1 = true;
   objectDetector.detect(img, gotResult);
 }
 
@@ -33,7 +33,7 @@ function gotResult(error, results) {
 function draw() {
   image(img, 0, 0, 640, 420);
 
-      if(status != "")
+      if(status1 != "")
       {
         for (i = 0; i < objects.length; i++) {
           document.getElementById("status").innerHTML = "Status : Object Detected";
